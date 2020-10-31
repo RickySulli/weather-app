@@ -1,0 +1,10 @@
+.form-control {
+    border-radius: 37%;
+}
+header{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
