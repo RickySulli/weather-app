@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-
     <title>Weather</title>
     
 </head>
@@ -18,10 +17,10 @@
         <div class="row">
             <div class="col-4">
                 <h4>Search for a city:</h4>
-                <form action="city" class="form-inline">
+                <form class="form-inline" >
                    <label for="inputCity"></label>
-                   <input type="text">
-                   <button type="submit" class="form-control btn btn-info">🔎</button>
+                   <input type="text" id="txtCity">
+                   <button type="submit" class="form-control btn btn-info" id = "weatherButton">🔎</button>
                 </form>
                
             </div>
@@ -29,13 +28,14 @@
                 <div class="card mb-3">
                     <div class="row no-gutters">
                       <div class="col-lg-8">
-                        <img src="..." class="card-img" alt="...">
+                        <img src="" class="card-img" alt="*">
                       </div>
                       <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <!--display current weather-->
+                        <div class="card-body" id="currentWeather">
+                          <h5 class="card-title"></h5>
+                          <p class="card-text">.</p>
+                          <p class="card-text"><small class="text-muted"></small></p>
                         </div>
                       </div>
                     </div>
@@ -46,63 +46,24 @@
     <div class="container">
         <div class="row">
             <div class="col-3" id="city-container">
+                <!--display previously searched cities-->
                 <div class="list-group">
                     <ul>
-                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque ut ducimus esse, eum libero maiores consectetur porro, sed expedita officia, unde neque natus repudiandae. Accusamus nihil et dolor ut deserunt!</li>
+                        <li></li>
                     </ul>
                 </div>
 
                 
             </div>
-            <div class="col-9">
-            <div class="card-deck">
-                <div class="card" id="day1">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-                <div class="card" id="day2">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-                <div class="card" id="day3">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-                <div class="card" id="day4">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-                <div class="card" id="day5">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                  </div>
-              
+            <!---display 5 day forecast-->
+            <div class="col-9" id="fiveday">
+            <div class="card-deck w-100">
             </div>
         </div>
         </div>
     </div>
 </div>
-
 <script src="./assets/js/js.js"></script>
+<script src="./key.js"></script>
 </body>
 </html>
