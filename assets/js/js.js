@@ -40,8 +40,39 @@ if (UVdata.value > 7) {
 } else if (UVdata.value <= 2) {
     document.querySelector(".card-body").className = "bg-success";
 }
-}))
+document.getElementById('day1Icon').src = "http://openweathermap.org/img/wn/"+data.list[9].weather[0].icon+".png";
+document.getElementById('day1Day').innerHTML = data.list[9].dt_txt
+document.getElementById('day1Temp').innerHTML = data.list[9].main.temp +"<span>&#176; F</span>"
+document.getElementById('day1Wind').innerHTML = data.list[9].wind.deg + "<span>&#176;</span>" +  data.list[9].wind.speed + "MPH"
+document.getElementById('day1UV').innerHTML = "UV: " + UVdata[1].value
 
-})
-}
+document.getElementById('day2Icon').src = "http://openweathermap.org/img/wn/"+data.list[17].weather[0].icon+".png";
+document.getElementById('day2Day').innerHTML = data.list[17].dt_txt
+document.getElementById('day2Temp').innerHTML = data.list[17].main.temp + "<span>&#176; F</span>"
+document.getElementById('day2Wind').innerHTML = data.list[17].wind.deg + "<span>&#176;</span>" +  data.list[17].wind.speed + "MPH"
+document.getElementById('day2UV').innerHTML = "UV: " + UVdata[2].value
+
+document.getElementById('day3Icon').src = "http://openweathermap.org/img/wn/"+data.list[25].weather[0].icon+".png";
+document.getElementById('day3Day').innerHTML = data.list[25].dt_txt
+document.getElementById('day3Temp').innerHTML = data.list[25].main.temp +"<span>&#176; F</span>"
+document.getElementById('day3Wind').innerHTML = data.list[25].wind.deg + "<span>&#176;</span>" +  data.list[25].wind.speed + "MPH"
+document.getElementById('day3UV').innerHTML = "UV: " + UVdata[3].value
+
+document.getElementById('day4Icon').src = "http://openweathermap.org/img/wn/"+data.list[33].weather[0].icon+".png";
+document.getElementById('day4Day').innerHTML = data.list[33].dt_txt
+document.getElementById('day4Temp').innerHTML = data.list[33].main.temp +"<span>&#176; F</span>"
+document.getElementById('day4Wind').innerHTML = data.list[33].wind.deg + "<span>&#176;</span>" +  data.list[33].wind.speed + "MPH"
+document.getElementById('day4UV').innerHTML = "UV: " + UVdata[4].value
+
+document.getElementById('day5Icon').src = "http://openweathermap.org/img/wn/"+data.list[40].weather[0].icon+".png";
+document.getElementById('day5Day').innerHTML = data.list[40].dt_txt
+document.getElementById('day5Temp').innerHTML = data.list[40].main.temp +"<span>&#176; F</span>"
+document.getElementById('day5Wind').innerHTML = data.list[40].wind.deg + "<span>&#176;</span>" +  data.list[40].wind.speed + "MPH"
+document.getElementById('day5UV').innerHTML = "UV: " + UVdata[5].value
+
+
+}));
+
+});
+};
  
