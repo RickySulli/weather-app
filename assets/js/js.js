@@ -34,9 +34,9 @@ fetch(url)
     // })
 
     console.log(data)
-    currentCity.innerHTML = "Current Weather for: " + data.city.name
+ /**   currentCity.innerHTML = "Current Weather for: " + data.city.name
     currentWeather.innerHTML = data.list[0].main.temp + "<span>&#176; F</span>"
-    document.getElementById('currentIcon').src = "http://openweathermap.org/img/wn/"+data.list[0].weather[0].icon+".png";
+    document.getElementById('currentIcon').src = "http://openweathermap.org/img/wn/"+data.list[0].weather[0].icon+".png";*/
 const UV = "http://api.openweathermap.org/data/2.5/uvi/forecast?lat="+data.city.coord.lat+"&lon="+data.city.coord.lon+"&appid=9c3f1783d9cdb00d3040091d76f0e1ff";
 
 
@@ -44,8 +44,13 @@ fetch(UV)
     .then(UVresponse => UVresponse.json())
     .then((UVdata) => {
     console.log(UVdata);
+})
+;
 
-debugger;
+});
+};
+
+/** 
     currentUV.innerHTML = "UV index: " + UVdata[0].value
     windConditions.innerHTML = "Wind: " + data.list[0].wind.deg + "<span>&#176;</span>"+ "<br>" + data.list[0].wind.speed + "MPH"
 
@@ -86,12 +91,8 @@ debugger;
             document.getElementById('day5Wind').innerHTML = data.list[40].wind.deg + "<span>&#176;</span>" +  data.list[40].wind.speed + "MPH"
             document.getElementById('day5UV').innerHTML = "UV: " + UVdata[5].value
 
+*/
 
-})
-;
-
-});
-};
 //fivedayrow function(){
     //document.createElement(a,"boo");
 //}
