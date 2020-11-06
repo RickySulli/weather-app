@@ -14,12 +14,12 @@ weatherButton.onclick = function(event){
                 .then(response => response.json())
                 .then((data) =>{
                     for(let i = 4; i < data.list.length; i+=8) {
+              var weather = document.querySelector('#currentCard');
                         
 
 
 
                         console.log(data.list[i]);
-
                 
         }
 
@@ -31,6 +31,5 @@ weatherButton.onclick = function(event){
                         console.log(UVdata[i]);
                     }
 });
-
 });
 };
