@@ -20,9 +20,6 @@ function getWeather() {
     var lat = data[0].lat;
     var lon = data[0].lon;
     
-
-
-
   const UV = 
   "http://api.openweathermap.org/data/2.5/uvi/forecast?lat="+lat+"&lon="+lon+"&appid=9c3f1783d9cdb00d3040091d76f0e1ff";
 
