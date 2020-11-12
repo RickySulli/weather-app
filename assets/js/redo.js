@@ -99,11 +99,9 @@ function history(){
            // searchedCity.id = "weatherButton";
             searchedCity.textContent =  element
             cityContainer.appendChild(searchedCity)
-           
+           searchedCity.addEventListener("click",function(){
+               searchBar.value = searchedCity.innerText
+           })
     });     
-    const historySearch = document.querySelector("#list-group-item")
-            historySearch.forEach(old=>{
-                searchBar.textContent = element
-                weatherButton(old)                
-            })
+    
 }
