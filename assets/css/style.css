@@ -10,5 +10,20 @@ header{
 }
 .card-image{
     height: 50px;
-    width: 50px;
+    width: 40px;
+}
+.card{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    
+}
+body{
+    background-color: beige;
+}
+li:hover{
+    background-color: sandybrown;
+}
+li{
+    border-radius: 10px;
+    font-weight: 300;
 }

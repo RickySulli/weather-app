@@ -3,6 +3,7 @@ const searchBar = document.getElementById("searchBar");
 const currentCard = document.getElementById("currentCard");
 const cityContainer = document.getElementById("cityContainer");
 const fiveDay = document.getElementById("fiveDay");
+let searchTerm = "";
 
 
 function clearUi(parent) {
@@ -11,12 +12,14 @@ function clearUi(parent) {
     }
 }
 //create a global variable to store cities in an array.
-var cities = [];
+var cities = JSON.parse(localStorage.getItem('cities')) || [];
 weatherButton.onclick = function(event){
     event.preventDefault()
     var cardDeckEl = document.getElementById("cardDeck");
         clearUi(cardDeckEl);
     const city = searchBar.value;
+    cities.push(city)
+    localStorage.setItem("cities", JSON.stringify(cities));
     
         const url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=9c3f1783d9cdb00d3040091d76f0e1ff&units=imperial";
        //create dynamic title card for weather
@@ -32,7 +35,7 @@ weatherButton.onclick = function(event){
                 cityName.textContent = (city)
                     currentCard.appendChild(cityName) 
             var today = document.createElement('h3')
-                    today.textContent = "UV index:"
+                    today.textContent = "Current UV index:"
                     currentCard.appendChild(today)
             
  //fetch url
@@ -51,7 +54,7 @@ weatherButton.onclick = function(event){
                 var cardDeck = document.querySelector('#cardDeck')
                         cardDeck.appendChild(temp)
                 var humidity = document.createElement('div')
-                        humidity.textContent = `${data.list[i].main.humidity}% humidity`;
+                        humidity.textContent = `${data.list[i].main.humidity}% Humidity`;
                         temp.appendChild(humidity)
                 var windSpeed= document.createElement('div')
                        windSpeed.textContent = `Wind:${data.list[i].wind.speed}MPH`;
@@ -82,24 +85,25 @@ weatherButton.onclick = function(event){
                 } else if (UVdata.value <= 2) {
                     document.querySelector("#currentCard").className = "bg-success";
                 }
-
-
-                localStorage.setItem("cities", JSON.stringify(city));
-                console.log(city);
-           
-        //    var searchedCity = document.createElement('li')
-        //     var cityContainer = document.querySelector('#cityContainer')
-        //         searchedCity.className = "page-item";
-        //         searchedCity.textContent =  JSON.parse(localStorage.getItem('city'))
-        //         cityContainer.appendChild(searchedCity)
-           
-        //     var cityLink = document.createElement('a')
-        //     var cityLi = document.querySelector('#page-item')
-        //         cityLink.className = "page-link";
-        //         cityLink.textContent = JSON.parse(localStorage.getItem('city'))
-        //         searchedCity.appendChild(cityLi)
-        //         console.log(localStorage);   
-
-});
-});
+        });
+    });
 };
+window.addEventListener("load", history)
+function history(){
+    
+    const historyContent = JSON.parse(localStorage.getItem('cities'))
+    historyContent.forEach(element => { 
+        var searchedCity = document.createElement('li' )       
+        var cityContainer = document.querySelector('#searchedCities')
+            searchedCity.className = "list-group-item";
+           // searchedCity.id = "weatherButton";
+            searchedCity.textContent =  element
+            cityContainer.appendChild(searchedCity)
+           
+    });     
+    const historySearch = document.querySelector("#list-group-item")
+            historySearch.forEach(old=>{
+                searchBar.textContent = element
+                weatherButton(old)                
+            })
+}
