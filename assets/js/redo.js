@@ -21,7 +21,7 @@ weatherButton.onclick = function(event){
     cities.push(city)
     localStorage.setItem("cities", JSON.stringify(cities));
     
-        const url = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=9c3f1783d9cdb00d3040091d76f0e1ff&units=imperial";
+        const url = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=9c3f1783d9cdb00d3040091d76f0e1ff&units=imperial";
        //create dynamic title card for weather
        
        var currentCard = document.querySelector('#currentCard')
@@ -101,6 +101,7 @@ function history(){
             cityContainer.appendChild(searchedCity)
            searchedCity.addEventListener("click",function(){
                searchBar.value = searchedCity.innerText
+               weatherButton(searchBar)
            })
     });     
     
